@@ -1,0 +1,1432 @@
+@font-face {
+  font-family: gilroy;
+  src: url(../fonts/gilroy/Gilroylight.ttf);
+}
+
+@font-face {
+  font-family: gilroyBold;
+  src: url(../fonts/gilroy/Gilroyextrabold.woff);
+}
+
+@font-face {
+  font-family: display;
+  src: url(../fonts/chronicle-display-cufonfonts/Chronicle\ Display\ Semibold.otf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(20, 65, 87, 0.9);
+}
+
+body {
+  background: #0b1d26;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
+}
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 8vh;
+  position: fixed;
+  width: 100%;
+  z-index: 9;
+  top: 0;
+  right: 0;
+  left: 0;
+  transition: all 0.3s ease-in-out;
+ 
+}
+.nav.sticy {
+  padding: 1px 0;
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.3s ease;
+  padding: 0px 0px 0px 100px;
+}
+
+.sticy .nav-links a {
+  color: #fff;
+  font-weight: 400;
+}
+
+.sticy .logo span {
+  color: #fff;
+}
+.central-text-father {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 30px;
+  z-index: 2;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+}
+
+.nav-links {
+  display: flex;
+  justify-content: space-around;
+  width: 30%;
+  margin-top: 20px;
+  padding: 7px;
+}
+.accountParent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap-reverse;
+  width: 120px;
+  margin-top: 20px;
+  padding: 7px;
+}
+.logo {
+  margin-top: 20px;
+  padding: 7px;
+}
+
+ul li {
+  list-style: none;
+}
+
+/* navbar effects bottom linear */
+
+ul li a,
+.logo,
+.account {
+  text-decoration: none;
+  font-family: gilroy, "Franklin Gothic Medium", "Arial Narrow", Arial,
+    sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #fff;
+  line-height: 110.9%;
+  /* or 22px */
+
+  letter-spacing: -0.02em;
+
+  /* color: rgba(0, 0, 0, 0.7); */
+}
+.logo {
+  font-family: display, sans-serif;
+  font-size: 32px;
+}
+.account {
+  line-height: 110.9%;
+}
+.fa-user-circle {
+  padding-left: -20px;
+}
+
+/* /[/[/[/[/[/[/[ burger  /[/[/[/[/[/[/[/[/[/[/[ */
+
+.burger {
+  display: flex;
+  flex-direction: column;
+  cursor: pointer;
+  display: none;
+  position: relative;
+}
+.burger .lines {
+  width: 30px;
+  height: 2px;
+  margin: 4px 0px;
+  background: #ffffff;
+}
+
+.lines.change {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+/*  JS styles */
+
+.nav-active {
+  transform: translate(0);
+  background: rgba(0, 0, 0, 0.8);
+  transition: all 0.5s ease;
+}
+
+/* nav Animation  */
+
+@keyframes navLinkMove {
+  from {
+    opacity: 1;
+    transform: translateX(90px);
+  }
+  to {
+    opacity: 1;
+    transform: translate(0px);
+  }
+}
+.toggle .line-1 {
+  transform: rotate(-45deg) translate(-0px, 6.5px);
+}
+
+.toggle .line-2 {
+  display: none;
+}
+
+.toggle .line-3 {
+  transform: rotate(45deg) translate(0px, -6.5px);
+}
+
+/* ==================
+==================  navbar responsive
+=================================== */
+
+@media screen and (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
+  nav {
+    transition: all 0.3s ease;
+  }
+  .nav-links {
+    position: absolute;
+    right: 0;
+    height: 99vh;
+    top: -3vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 35%;
+    /* transform: translateX(20%); */
+    transition: all 0.5s ease-in;
+  }
+  .nav-links li {
+    opacity: 0;
+  }
+  .accountParent {
+    opacity: 0;
+  }
+  .burger {
+    display: block;
+    margin: 0px 0rem 0px 6.7rem;
+    display: flex;
+    z-index: 9;
+    /* background: rgba(0, 0, 0, 0.8); */
+    width: 86px;
+    justify-content: center;
+    align-items: right;
+    padding-right: 30px;
+    height: 78px;
+  }
+
+  .burger .lines {
+    transition: all 0.2s ease-in;
+    background: rgb(255, 255, 255);
+    margin-left: auto;
+    width: 30px;
+  }
+  nav.sticy .burger {
+    background: none;
+  }
+  .burger-left {
+    margin-right: 100px;
+  }
+}
+
+/* ========= img ========
+=============================   */
+
+.mountain-img img {
+  /* background-image: url(../img/tug.jpg); */
+
+  filter: brightness(80%);
+  height: 1160px;
+
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ==============================
+============= CENTRAL TEXTS =======
+==================================*/
+
+.central-text-father {
+  display: flex;
+  justify-content: space-between;
+  z-index: 4;
+  top: 10rem;
+  width: 100%;
+}
+
+.text-left {
+  display: flex;
+  transform: rotate(90deg);
+  font-family: gilroy, sans-serif;
+  color: #fff;
+  font-size: 18;
+  font-weight: 500;
+  width: 200px;
+  margin-left: -14rem;
+  margin-right: 15rem;
+}
+.fab {
+  margin: 0px 10px;
+}
+.text-right {
+  width: 100px;
+  margin-top: 5rem;
+}
+.text-number {
+  display: flex;
+  /* flex-direction: column; */
+  transform: rotate(0deg);
+  font-family: gilroy, sans-serif;
+  color: #fff;
+  line-height: 42px;
+  font-size: 18;
+  cursor: pointer;
+  font-weight: 500;
+  /* margin: 10px ; */
+}
+.text-line {
+  transition: all 0.2s ease-in;
+  position: absolute;
+  left: 30px;
+  top: 0;
+  display: flex;
+  width: 2px;
+  height: 48px;
+  background: #919191;
+  border-radius: 2%;
+}
+
+.text-number:hover .text-line {
+  background: #fff;
+}
+
+.text-line:first-child {
+  transform: translateX(10px);
+}
+
+/* ==============================================
+==================  text center ================
+================================================= */
+
+.text-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 1000px;
+  text-align: center;
+}
+.text-center-top-line {
+  display: flex;
+  height: 2px;
+  width: 70px;
+  border-radius: 2px;
+  background: #fff;
+  z-index: 2;
+  margin-top: 10px;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+.text-center-top {
+  width: 100%;
+  display: flex;
+  font-family: gilroy, sans-serif;
+  color: #fbd784;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-family: Gilroy, sans-serif;
+  font-size: 18px;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  margin: 32px 0px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: 22px;
+  letter-spacing: 6px;
+  text-align: left;
+}
+
+.text-central {
+  font-family: display, sans-serif;
+  font-size: 88px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 100px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: capitalize;
+  color: #fff;
+  animation: topup 0.5s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+}
+
+@keyframes topup {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+/* ================ text bottom ============ */
+
+.text-bottom {
+  font-family: gilroyBold, sans-serif;
+  font-style: 400;
+  font-weight: integrity;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+  text-align: left;
+  color: #ffffff;
+  position: relative;
+  width: 120px;
+}
+
+.down {
+  display: inline-block;
+  width: 1px;
+  height: 65px;
+  background: #fff;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+}
+.downup {
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: 50px;
+  left: 4px;
+  transform: rotate(30deg);
+}
+.downrp {
+  display: inline-block;
+  width: 1px;
+  height: 15px;
+  background: #fff;
+  position: absolute;
+  top: 50px;
+  right: 4px;
+  transform: rotate(-30deg);
+}
+
+/* ******************* 
+********* Background linear gradient
+********************** */
+
+.background-linear {
+  background: linear-gradient(180deg, rgba(11, 29, 38, 0) 0%, #0b1d26 61.38%);
+  width: 100%;
+  height: 600px;
+  margin: 0 auto;
+  margin-top: -2rem;
+  display: flex;
+  z-index: 3;
+  position: absolute;
+  top: 650px;
+}
+
+.oneSection {
+  margin-top: 22rem;
+  display: flex;
+  justify-content: space-between;
+}
+.oneSection .forIndexNumber {
+  font-family: Gilroybold, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 240px;
+  line-height: 240px;
+  /* identical to box height, or 100% */
+
+  color: rgba(49, 82, 99, 0.3);
+
+  height: 290px;
+  opacity: 0.1;
+}
+.oneSection .forTextSection {
+  display: flex;
+  flex-direction: column;
+  margin-right: 3rem;
+  margin-top: 7rem;
+  margin-left: -3rem;
+}
+.oneSection .forTopText {
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+  /* Accent */
+
+  color: #fbd784;
+  display: flex;
+  justify-content: space-between;
+  width: 260px;
+}
+.forTopTextLine {
+  display: flex;
+  background: #fbd784;
+  height: 2px;
+  width: 70px;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.forCenterTextTitle {
+  font-family: display, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 77px;
+  width: 560px;
+  color: #ffffff;
+}
+.forCenterText {
+  font-family: gilroy, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  /* or 178% */
+  width: 560px;
+  color: #ffffff;
+}
+
+.forBottomText {
+  font-family: gilroy, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 20px;
+  width: 130px;
+  color: #fbd784;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+.forBottomText:hover {
+  cursor: pointer;
+}
+.forBottomText:hover .fa-arrow-right {
+  transform: translateX(20px);
+  text-decoration: none;
+}
+
+.fa-arrow-right {
+  margin-top: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/*   ============ i mage   */
+.forImageSection img {
+  height: 520px;
+  width: 366px;
+  display: flex;
+  margin: 7rem auto;
+}
+
+/* ==================Two section style ======== */
+
+.twoSection {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10rem;
+}
+
+.twoSection .forIndexNumber2 {
+  font-family: Gilroybold, sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 240px;
+  line-height: 240px;
+  color: rgba(49, 82, 99, 0.3);
+  height: 90px;
+  opacity: 0.1;
+  align-items: right;
+  text-align: right;
+  margin-right: -5rem;
+  margin-left: 2rem;
+  /* transform: translateY(-32rem); */
+}
+.twoSection .forTextSection2 {
+  display: flex;
+  flex-direction: column;
+  align-items: right;
+  justify-content: right;
+  margin-top: 4rem;
+  align-items: right;
+  /* transform: translateX(40rem); */
+}
+.twoSection .forTopText2 {
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+  /* Accent */
+
+  color: #fbd784;
+  display: flex;
+  justify-content: space-between;
+  width: 360px;
+}
+.forTopTextLine {
+  display: flex;
+  background: #fbd784;
+  height: 2px;
+  width: 70px;
+  border-radius: 2px;
+  margin-top: 8px;
+}
+
+.forCenterTextTitle2 {
+  font-family: display, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 64px;
+  line-height: 77px;
+  width: 560px;
+  color: #ffffff;
+}
+.forCenterText2 {
+  font-family: gilroy;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  /* or 178% */
+  width: 560px;
+  color: #ffffff;
+}
+
+.forBottomText2 {
+  font-family: gilroy, sans-serif;
+  font-size: 18px;
+  line-height: 22px;
+  margin-top: 20px;
+  width: 130px;
+  color: #fbd784;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.3s linear;
+}
+.forBottomText2:hover {
+  cursor: pointer;
+}
+.forBottomText2:hover .fa-arrow-right {
+  transform: translateX(20px);
+  text-decoration: none;
+}
+
+.fa-arrow-right {
+  margin-top: 4px;
+  transition: all 0.3s ease-in-out;
+}
+
+/*   ============ i mage   */
+.forImageSection2 img {
+  height: 520px;
+  width: 366px;
+  display: flex;
+  /* transform: translateY(-38rem); */
+}
+
+/* ================= JavaScript Animation ========================*/
+
+.right {
+  position: relative;
+  transform: translateX(50px);
+  opacity: 0;
+  transition: all 0.7s ease;
+  transition-delay: 0.7s;
+}
+.right.Ractive {
+  position: relative;
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+.toTop {
+  position: relative;
+  transform: translateY(50px);
+  opacity: 0;
+  transition: all 0.5s ease;
+}
+.toTop.active {
+  position: relative;
+  transform: translateY(0px);
+  opacity: 1;
+}
+
+.left {
+  position: relative;
+  transform: translateX(-50px);
+  opacity: 0;
+  transition: all 0.7s ease-in-out;
+}
+.left.leftActiv {
+  position: relative;
+  transform: translateX(0px);
+  opacity: 1;
+}
+
+/*! <!-- three section  --> */
+
+.oneSection .forTopText3 {
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  font-weight: 800;
+  font-size: 18px;
+  line-height: 22px;
+  /* identical to box height */
+
+  letter-spacing: 6px;
+  text-transform: uppercase;
+
+  /* Accent */
+
+  color: #fbd784;
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+}
+
+/* !  FOOTER SECTION STYLE */
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 14rem;
+}
+.oneFooterSection {
+  width: 60%;
+}
+.oneFooterSection .footTitle {
+  font-family: Display, sans-serif;
+  font-size: 32px;
+  line-height: 38px;
+  letter-spacing: 0.01em;
+  text-transform: capitalize;
+
+  /* Weiß */
+
+  color: #ffffff;
+}
+.oneFooterSection .footText {
+  font-family: gilroybold, sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  line-height: 32px;
+  /* or 178% */
+  width: 300px;
+  color: #ffffff;
+  margin-top: 2rem;
+}
+
+.footCopy {
+  font-family: Gilroy;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 32px;
+  /* identical to box height, or 178% */
+
+  color: #ffffff;
+  margin-top: 5rem;
+  opacity: 0.5;
+}
+
+/* two footer section */
+
+.twoFooterSection,
+.threeFooterSection {
+  width: 20%;
+}
+.footerUl {
+  font-family: Gilroy, sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 42px;
+  /* identical to box height, or 178% */
+
+  color: #ffffff;
+}
+.footerUl li {
+  transition: all 0.3s linear;
+}
+
+.footerUl li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+.footerUl .footerUlTitle {
+  font-family: Gilroybold;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 24px;
+  line-height: 32px;
+  /* identical to box height, or 133% */
+
+  /* Accent */
+
+  color: #fbd784;
+}
+
+.threeFooterSection,
+.twoFooterSection {
+  display: flex;
+  justify-content: center;
+}
+
+/* responsive */
+
+@media screen and (max-width: 600px) {
+  .mountain-img img {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .background-linear {
+    width: 100%;
+    height: 400px;
+
+    margin-top: -17rem;
+  }
+  .central-text-father {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+  }
+  .text-left {
+    /* margin: 0 auto; */
+    width: 100%;
+    font-size: 12px;
+    margin-left: auto;
+    display: none;
+  }
+
+  .text-center {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 12px;
+  }
+
+  .text-center-top {
+    font-size: 12px;
+    width: 100%;
+  }
+  .text-center-top-line {
+    background: #fbd784;
+  }
+  .text-central {
+    font-size: 50px;
+    line-height: 50px;
+  }
+  .text-right {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    display: none;
+  }
+
+  /*  onesection style responsive */
+  .oneSection {
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    margin-left: 3rem;
+  }
+
+  .oneSection .forIndexNumber {
+    display: flex;
+    font-size: 120px;
+    margin-top: 300px;
+    margin-bottom: -300px;
+  }
+
+  .oneSection .forTextSection .forTopText,
+  .twoSection .forTextSection2 .forTopText2 {
+    display: flex;
+    font-size: 16px;
+    margin: 0 auto;
+  }
+
+  .oneSection .forTextSection .forTopTextLine,
+  .twoSection .forTextSection2 .forTopTextLine2 {
+    display: flex;
+    width: 70px;
+  }
+
+  .oneSection .forTextSection .forCenterTextTitle,
+  .twoSection .forTextSection2 .forCenterTextTitle2 {
+    display: flex;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 50px;
+  }
+  .forCenterText,
+  .forCenterText2 {
+    display: flex;
+    margin: 0 auto;
+    font-size: 16px;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 0 auto;
+  }
+
+  .forImageSection {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+
+  .forImageSection img {
+    display: flex;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+    padding: 0 auto;
+    text-align: center;
+    margin-left: 0px;
+    transform: translateX(-33px);
+  }
+
+  #formImage1 {
+    transform: translateX(13px);
+  }
+
+  /*  onesection style responsive */
+  .twoSection {
+    width: 100%;
+    margin: 0 auto;
+    flex-wrap: wrap;
+    /* margin-left: 3rem; */
+  }
+
+  .twoSection .forIndexNumber2 {
+    display: flex;
+    font-size: 120px;
+  }
+
+  /*  footer section  */
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    text-align: center;
+    margin: 3rem auto;
+  }
+
+  .twoFooterSection,
+  .threeFooterSection {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin: 20px 0px;
+  }
+
+  .oneFooterSection {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 601px) and (max-width: 999px) {
+  .mountain-img img {
+    width: 100%;
+    height: 100vh;
+  }
+
+  nav ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .background-linear {
+    width: 100%;
+    height: 400px;
+
+    margin-top: -17rem;
+  }
+  .central-text-father {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .text-left {
+    /* margin: 0 auto; */
+    /* width: 100%; */
+    display: flex;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: -161px;
+    /* display: none; */
+    font-family: gilroy;
+  }
+
+  .text-center {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 12px;
+    margin-left: 1rem;
+  }
+
+  .text-center-top {
+    font-size: 12px;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 3rem;
+  }
+  .text-center-top-line {
+    background: #fbd784;
+  }
+  .text-central {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    margin-left: 3rem;
+  }
+  .text-bottom {
+    margin-left: 3rem;
+  }
+  .text-right {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-right: -150px;
+    margin-top: 0px;
+
+    /* display: none; */
+  }
+
+  /*  onesection style responsive */
+  .oneSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .oneSection .forIndexNumber {
+    display: flex;
+    font-size: 160px;
+  }
+
+  .forTextSection {
+    display: flex;
+    transform: translateX(-120px);
+  }
+  .oneSection .forTextSection .forTopText,
+  .twoSection .forTextSection2 .forTopText2 {
+    display: flex;
+    font-size: 16px;
+    margin: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .oneSection .forTextSection .forTopTextLine,
+  .twoSection .forTextSection2 .forTopTextLine2 {
+    display: flex;
+    width: 70px;
+  }
+
+  .oneSection .forTextSection .forCenterTextTitle,
+  .twoSection .forTextSection2 .forCenterTextTitle2 {
+    display: flex;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translateX(-120px);
+  }
+  .forCenterText,
+  .forCenterText2 {
+    display: flex;
+    margin: 0 auto;
+    font-size: 16px;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .forImageSection {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+
+  .forImageSection img {
+    display: flex;
+    width: 400px;
+
+    margin: 20px auto;
+    margin-right: -230px;
+
+    /* transform: translateX(-23px); */
+  }
+  .thereSection {
+    display: flex;
+    justify-content: space-between;
+    width: 130%;
+  }
+
+  #formImage1 {
+    transform: translateX(13px);
+  }
+
+  /*  onesection style responsive */
+  .twoSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .twoSection .forIndexNumber2 {
+    display: flex;
+    font-size: 160px;
+  }
+
+  .forTextSection {
+    display: flex;
+    transform: translateX(-120px);
+  }
+  .oneSection .forTextSection .forTopText,
+  .twoSection .forTextSection2 .forTopText2 {
+    display: flex;
+    font-size: 16px;
+    margin: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .oneSection .forTextSection .forTopTextLine,
+  .twoSection .forTextSection2 .forTopTextLine2 {
+    display: flex;
+    width: 70px;
+  }
+
+  .oneSection .forTextSection .forCenterTextTitle,
+  .twoSection .forTextSection2 .forCenterTextTitle2 {
+    display: flex;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translateX(-120px);
+  }
+  .forCenterText,
+  .forCenterText2 {
+    display: flex;
+    margin: 0 auto;
+    font-size: 16px;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .twoSection .forImageSection {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+
+  .forImageSection img {
+    display: flex;
+    width: 350px;
+
+    margin: 20px auto;
+
+    transform: translateX(-123px);
+  }
+
+  #formImage1 {
+    transform: translateX(13px);
+  }
+
+  /*  footer section  */
+
+  .footer {
+    display: flex;
+    flex-wrap: wrap-reverse;
+    width: 100%;
+    text-align: center;
+    margin: 3rem auto;
+  }
+
+  .twoFooterSection,
+  .threeFooterSection {
+    width: 100%;
+    display: flex;
+    text-align: center;
+    margin: 20px 0px;
+  }
+
+  .oneFooterSection {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 3rem;
+
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+  }
+}
+@media (min-width: 1000px) and (max-width: 1300px) {
+  .mountain-img img {
+    width: 100%;
+    height: 100vh;
+  }
+
+  nav ul li {
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .background-linear {
+    width: 100%;
+    height: 400px;
+
+    margin-top: -17rem;
+  }
+  .central-text-father {
+    width: 90%;
+    display: flex;
+    justify-content: space-between;
+  }
+  .text-left {
+    /* margin: 0 auto; */
+    /* width: 100%; */
+    display: flex;
+    font-size: 16px;
+    margin-right: auto;
+    margin-left: -161px;
+    /* display: none; */
+    font-family: gilroy;
+  }
+
+  .text-center {
+    margin: 0 auto;
+    width: 100%;
+    font-size: 12px;
+    margin-left: 1rem;
+  }
+
+  .text-center-top {
+    font-size: 12px;
+    width: 100%;
+    margin: 0 auto;
+    margin-left: 3rem;
+  }
+  .text-center-top-line {
+    background: #fbd784;
+  }
+  .text-central {
+    font-size: 50px;
+    line-height: 50px;
+    margin: 0 auto;
+    margin-left: 3rem;
+  }
+  .text-bottom {
+    margin-left: 3rem;
+  }
+  .text-right {
+    display: flex;
+    flex-direction: column;
+    float: right;
+    margin-right: -150px;
+    margin-top: 0px;
+
+    /* display: none; */
+  }
+
+  /*  onesection style responsive */
+  .oneSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .oneSection .forIndexNumber {
+    display: flex;
+    font-size: 160px;
+  }
+
+  .forTextSection {
+    display: flex;
+    transform: translateX(-120px);
+  }
+  .oneSection .forTextSection .forTopText,
+  .twoSection .forTextSection2 .forTopText2 {
+    display: flex;
+    font-size: 16px;
+    margin: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .oneSection .forTextSection .forTopTextLine,
+  .twoSection .forTextSection2 .forTopTextLine2 {
+    display: flex;
+    width: 70px;
+  }
+
+  .oneSection .forTextSection .forCenterTextTitle,
+  .twoSection .forTextSection2 .forCenterTextTitle2 {
+    display: flex;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translateX(-120px);
+  }
+  .forCenterText,
+  .forCenterText2 {
+    display: flex;
+    margin: 0 auto;
+    font-size: 18px;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .forImageSection {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+
+  .forImageSection img {
+    display: flex;
+    width: 400px;
+
+    margin: 20px auto;
+    margin-right: -230px;
+
+    /* transform: translateX(-23px); */
+  }
+  .thereSection {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  #formImage1 {
+    transform: translateX(13px);
+  }
+
+  /*  onesection style responsive */
+  .twoSection {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .twoSection .forIndexNumber2 {
+    display: flex;
+    font-size: 160px;
+  }
+
+  .forTextSection {
+    display: flex;
+    transform: translateX(-120px);
+  }
+  .oneSection .forTextSection .forTopText,
+  .twoSection .forTextSection2 .forTopText2 {
+    display: flex;
+    font-size: 16px;
+    margin: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .oneSection .forTextSection .forTopTextLine,
+  .twoSection .forTextSection2 .forTopTextLine2 {
+    display: flex;
+    width: 70px;
+  }
+
+  .oneSection .forTextSection .forCenterTextTitle,
+  .twoSection .forTextSection2 .forCenterTextTitle2 {
+    display: flex;
+    font-size: 35px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+    line-height: 50px;
+    transform: translateX(-120px);
+  }
+  .forCenterText,
+  .forCenterText2 {
+    display: flex;
+    margin: 0 auto;
+    font-size: 16px;
+    flex-wrap: wrap;
+    text-align: center;
+    width: 100%;
+    padding: 0 auto;
+    transform: translateX(-120px);
+  }
+
+  .twoSection .forImageSection {
+    display: flex;
+    width: 100%;
+    text-align: center;
+  }
+
+  .forImageSection img {
+    display: flex;
+    width: 350px;
+
+    margin: 20px auto;
+
+    transform: translateX(-123px);
+  }
+
+  #formImage1 {
+    transform: translateX(13px);
+  }
+
+
+}
+
